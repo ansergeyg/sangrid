@@ -1,0 +1,22 @@
+{
+  "name": "sangrid",
+  "version": "1.0.0",
+  "description": "Grid data structure to run some algorithms or draw on.",
+  "main": "index.js",
+  "scripts": {
+    "test": "drawgrid"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansergeyg/sangrid.git"
+  },
+  "keywords": [
+    "grid"
+  ],
+  "author": "Sergey An",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ansergeyg/sangrid/issues"
+  },
+  "homepage": "https://github.com/ansergeyg/sangrid#readme"
+}
