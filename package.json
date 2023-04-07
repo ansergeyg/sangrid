@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Grid data structure to run some algorithms or draw on.",
   "private": true,
-  "main": "dist/index.bundle.js",
+  "module": "./dist/sangrid.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"

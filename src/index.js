@@ -1,21 +1,18 @@
-import _ from 'lodash';
-import printMe from './print.js';
-import './style.css';
+import * as gridLib from './grid.js';
 
-export function test() {
-    const element = document.createElement('div');
-  
-    const btn = document.createElement('button');
+export function init(userConfig) {
+  let defaultConfig = {size: 111};
+  const config = Object.assign(defaultConfig, userConfig);
 
-    // Lodash now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
+  document.addEventListener('DOMContentLoaded', (event) => {
 
-    btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
-    element.appendChild(btn);
-    
-    return element;
-  }
-  
-  document.body.appendChild(test());
+    const canvas = document.getElementById(config.canvasId);
+
+    if (canvas.getContext) {
+      console.log(config);
+      const ctx = canvas.getContext("2d");
+      let grid = gridLib.buildGrid(config.cellSize, config.cellCount, config.sepDist);
+      gridLib.drawGrid(ctx, grid, config.cellSize, config.cellCount);
+    }
+  });  
+}

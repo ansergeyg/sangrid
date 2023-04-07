@@ -1,17 +1,17 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   entry: {
     index: './src/index.js',
-    print: './src/print.js',    
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: 'sangrid.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     globalObject: 'this',
     library: {
-        name: 'test',
+        name: 'sangrid',
         type: 'umd',
     },
   },
@@ -22,5 +22,16 @@ module.exports = {
             use: ['style-loader', 'css-loader'],
         }
     ],
+  },
+  optimization: {
+    minimize: false
+  },  
+  externals: {
+    lodash: {
+      commonjs: 'lodash',
+      commonjs2: 'lodash',
+      amd: 'lodash',
+      root: '_',
+    }
   },
 };
