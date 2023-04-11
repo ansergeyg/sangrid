@@ -18,7 +18,7 @@ export function init(userConfig) {
     if (canvas.getContext) {
       const ctx = canvas.getContext("2d");
       let grid = gridLib.buildGrid(config.cellSize, config.cellCount, config.sepDist);
-      gridLib.drawGrid(ctx, grid, config.cellSize, config.cellCount);
+      gridLib.drawGrid(grid, ctx, config.cellSize, config.cellCount);
     }
   });  
 }
