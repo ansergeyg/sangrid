@@ -32,7 +32,7 @@ export function drawCell(ctx, cell, cellSize, borderWidth, borderColor, backgrou
   fillCell(ctx, cell, cellSize, borderWidth, backgroundColor);
 }
 
-export function drawUpBorder(ctx, cell, cellSize, borderColor) {
+function drawUpBorder(ctx, cell, cellSize, borderColor) {
   if (cell.show.up) {
     ctx.beginPath();
     ctx.moveTo(cell.x, cell.y);
@@ -42,7 +42,7 @@ export function drawUpBorder(ctx, cell, cellSize, borderColor) {
   }
 }
 
-export function drawRightBorder(ctx, cell, cellSize, borderColor) {
+function drawRightBorder(ctx, cell, cellSize, borderColor) {
   if (cell.show.right) {
     ctx.beginPath();
     ctx.moveTo(cell.x + cellSize, cell.y);
@@ -52,7 +52,7 @@ export function drawRightBorder(ctx, cell, cellSize, borderColor) {
   }
 }
 
-export function drawDownBorder(ctx, cell, cellSize, borderColor) {
+function drawDownBorder(ctx, cell, cellSize, borderColor) {
   if (cell.show.down) {
     ctx.beginPath();
     ctx.moveTo(cell.x + cellSize, cell.y + cellSize);
@@ -62,7 +62,7 @@ export function drawDownBorder(ctx, cell, cellSize, borderColor) {
   }
 }
 
-export function drawLeftBorder(ctx, cell, cellSize, borderColor) {
+function drawLeftBorder(ctx, cell, cellSize, borderColor) {
   if (cell.show.left) {
     ctx.beginPath();
     ctx.moveTo(cell.x, cell.y + cellSize);
@@ -72,7 +72,7 @@ export function drawLeftBorder(ctx, cell, cellSize, borderColor) {
   }
 }
 
-export function fillCell(ctx, cell, cellSize, borderWidth, backgroundColor) {
+function fillCell(ctx, cell, cellSize, borderWidth, backgroundColor) {
   ctx.fillStyle = backgroundColor;
   ctx.fillRect(cell.x + borderWidth / 2, cell.y + borderWidth / 2, cellSize - borderWidth, cellSize - borderWidth);
   // ctx.fillRect(x + w/2, y + w/2, d + w/2, d - w);
